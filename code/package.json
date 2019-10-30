@@ -14,15 +14,19 @@
     ],
     "main": "./extension.js",
     "contributes": {
-        "commands": [{
-            "command": "extension.getRelativePath",
-            "title": "Get Relative Path"
-        }],
-        "menus": {
-            "explorer/context": [{
+        "commands": [
+            {
                 "command": "extension.getRelativePath",
-                "when": "editorIsOpen"
-            }]
+                "title": "Get Relative Path"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.getRelativePath",
+                    "when": "editorIsOpen"
+                }
+            ]
         }
     },
     "scripts": {

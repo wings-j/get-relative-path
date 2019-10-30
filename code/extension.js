@@ -1,11 +1,8 @@
-const vscode = require('vscode');
+const Vscode = require('vscode');
+const GetRelativePath=require('./src/index')
 
 function activate(context) {
-    let disposable = vscode.commands.registerCommand('extension.getRelativePath', function() {
-        vscode.window.showInformationMessage('Relative path has been copied to the clipboard');
-    });
-
-    context.subscriptions.push(disposable);
+    context.subscriptions.push(Vscode.commands.registerCommand('extension.GetRelativePath', GetRelativePath));
 }
 
 exports.activate = activate;
