@@ -3,6 +3,7 @@
     "displayName": "get-relative-path",
     "description": "get relative path",
     "version": "0.0.1",
+    "publisher": "WingsJ",
     "engines": {
         "vscode": "^1.39.0"
     },
@@ -14,22 +15,20 @@
     ],
     "main": "./extension.js",
     "contributes": {
-        "commands": [
-            {
-                "command": "extension.getRelativePath",
-                "title": "Get Relative Path"
-            }
-        ],
+        "commands": [{
+            "command": "extension.getRelativePath",
+            "title": "Get Relative Path"
+        }],
         "menus": {
-            "explorer/context": [
-                {
-                    "command": "extension.getRelativePath",
-                    "when": "editorIsOpen"
-                }
-            ]
+            "explorer/context": [{
+                "command": "extension.getRelativePath",
+                "when": "editorIsOpen"
+            }]
         }
     },
     "scripts": {
+        "init": "yo code",
+        "pack": "vsce package",
         "test": "node ./test/runTest.js"
     },
     "devDependencies": {
@@ -38,9 +37,11 @@
         "@types/node": "^10.12.21",
         "@types/vscode": "^1.39.0",
         "eslint": "^5.13.0",
+        "generator-code": "^1.2.7",
         "glob": "^7.1.4",
         "mocha": "^6.1.4",
         "typescript": "^3.3.1",
-        "vscode-test": "^1.2.0"
+        "vscode-test": "^1.2.0",
+        "yo": "^3.1.0"
     }
 }
