@@ -2,8 +2,10 @@
     "name": "get-relative-path",
     "displayName": "get-relative-path",
     "description": "get relative path",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "publisher": "WingsJ",
+    "icon":"icon.svg",
+    "repository":"https://github.com/WingsJ0/get-relative-path.git",
     "engines": {
         "vscode": "^1.39.0"
     },
@@ -15,15 +17,19 @@
     ],
     "main": "./extension.js",
     "contributes": {
-        "commands": [{
-            "command": "extension.getRelativePath",
-            "title": "Get Relative Path"
-        }],
-        "menus": {
-            "explorer/context": [{
+        "commands": [
+            {
                 "command": "extension.getRelativePath",
-                "when": "editorIsOpen"
-            }]
+                "title": "Get Relative Path"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.getRelativePath",
+                    "when": "editorIsOpen"
+                }
+            ]
         }
     },
     "scripts": {
@@ -41,6 +47,7 @@
         "glob": "^7.1.4",
         "mocha": "^6.1.4",
         "typescript": "^3.3.1",
+        "vsce": "^1.69.0",
         "vscode-test": "^1.2.0",
         "yo": "^3.1.0"
     }
