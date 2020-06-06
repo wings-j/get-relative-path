@@ -1,26 +1,11 @@
 /**
- * @name Index
+ * @name 获取相对路径
  */
 
-const Path = require('path')
-const Vscode = require('vscode');
+/* private */
 
-/**
- * @name 获取当前编辑文件的路径
- * @return {String} 路径
- */
-const getCurrentEditorPath = function ()
-{
-    return Vscode.window.activeTextEditor.document.uri.path
-}
-/**
- * @name 写入剪贴板
- * @param {String} content 内容
- */
-const writeToClipboard = function (content)
-{
-    Vscode.env.clipboard.writeText(content)
-}
+const CalcPath = require('./part/calcPath')
+const WriteToClipboard = require('./part/writeToClipboard')
 
 /* public */
 
@@ -28,15 +13,9 @@ const writeToClipboard = function (content)
  * @name 取得相对路径
  * @param {Object} target 文件浏览器中的选中文件信息
  */
-const getRelativePath = function (target)
-{
-    let relative = Path.relative(Path.dirname(getCurrentEditorPath()), target.path).replace(/\\/g, '/')
-    if (relative.slice(0, 2) !== './' && relative.slice(0, 2) !== '..')
-    {
-        relative = './' + relative
-    }
-
-    writeToClipboard(relative)
+const getRelativePath = function (target) {
+  let path = CalcPath(target)
+  WriteToClipboard(path)
 }
 
 /* construct */
