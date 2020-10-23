@@ -1,5 +1,7 @@
 # get-relative-path
 
+VSCode扩展。
+
 获取文件相对路径的工具。
 
 ## 使用方法
