@@ -1,13 +1,24 @@
 # get-relative-path
 
-VSCode扩展。
+A tool to get the path of the target file relative to the current file in the editor.
 
-获取文件相对路径的工具。
+## Usage
 
-## 使用方法
+When a file is in the current editor, click the right button on the target file, and choose 'Get relative path' or 'Get relative path with import'.
 
-在打开编辑器的情况下，在资源浏览器中右键点击文件，点击相应按钮：
+![](docs/example.gif)
 
-- 获取相对路径
-- 获取相对 Import：获取相对路径并生成 import 语句
-- 获取相对 Require：获取相对路径并生成 require 语句
+## Setting
+
+### Name format
+
+The format of the variable name can be configured.
+
+```
+{
+  "getRelativePath.nameFormat": "pascal"
+}
+```
+
+- pascal
+- camel

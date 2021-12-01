@@ -2,7 +2,7 @@
   "name": "get-relative-path",
   "displayName": "get-relative-path",
   "description": "get relative path",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "publisher": "WingsJ",
   "icon": "icon.png",
   "repository": "https://github.com/WingsJ0/get-relative-path.git",
@@ -22,15 +22,11 @@
     "commands": [
       {
         "command": "extension.getRelativePath",
-        "title": "获取相对路径"
+        "title": "Get relative path"
       },
       {
         "command": "extension.getRelativeImport",
-        "title": "获取相对Import"
-      },
-      {
-        "command": "extension.getRelativeRequire",
-        "title": "获取相对Require"
+        "title": "Get relative path with import"
       }
     ],
     "menus": {
@@ -44,29 +40,21 @@
           "command": "extension.getRelativeImport",
           "when": "editorIsOpen",
           "group": "get-relative-path"
-        },
-        {
-          "command": "extension.getRelativeRequire",
-          "when": "editorIsOpen",
-          "group": "get-relative-path"
         }
       ]
     }
   },
   "scripts": {
     "init": "yo code",
-    "pack": "vsce package",
-    "test": "node ./test/runTest.js"
+    "pack": "vsce package"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
-    "@types/mocha": "^5.2.6",
     "@types/node": "^10.12.21",
     "@types/vscode": "^1.39.0",
     "eslint": "^5.13.0",
     "generator-code": "^1.2.7",
     "glob": "^7.1.4",
-    "mocha": "^6.1.4",
     "typescript": "^3.3.1",
     "vsce": "^1.69.0",
     "vscode-test": "^1.2.0",

@@ -1,18 +1,14 @@
 /**
- * @name 获取相对路径import语句
+ * 获取相对路径import语句
  */
 
-/* private */
-
 const Path = require('path')
-const CalcPath = require('./part/calcPath')
-const WriteToClipboard = require('./part/writeToClipboard')
-const TransformToHump = require('./part/transformToHump')
-
-/* public */
+const CalcPath = require('./part/calc')
+const WriteToClipboard = require('./part/copy')
+const TransformToHump = require('./part/transform')
 
 /**
- * @name 获取相对路径import语句
+ * 获取相对路径import语句
  * @param {Object} target 文件浏览器中的选中文件信息
  */
 const getRelativeImport = target => {
@@ -23,7 +19,5 @@ const getRelativeImport = target => {
 
   WriteToClipboard(clause)
 }
-
-/* construct */
 
 module.exports = getRelativeImport
